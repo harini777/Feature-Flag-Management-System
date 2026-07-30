@@ -7,7 +7,8 @@ from app.models.flag import Flag
 def evaluate_flag(
     db: Session,
     flag_key: str,
-    environment_name: str
+    environment_name: str,
+    user_context: dict | None = None
 ):
     environment = (
         db.query(Environment)
@@ -38,15 +39,21 @@ def evaluate_flag(
 
     if flag.enabled:
         return {
-            "success": True,
-            "flag": flag.key,
-            "enabled": True,
-            "value": flag.default_value
-        }
+        "success": True,
+        "environment": environment.name,
+        "flag": flag.key,
+        "type": flag.type,
+        "enabled": True,
+        "value": flag.default_value,
+        "user_context": user_context
+    }
 
     return {
-        "success": True,
-        "flag": flag.key,
-        "enabled": False,
-        "value": flag.default_value
-    }
+    "success": True,
+    "environment": environment.name,
+    "flag": flag.key,
+    "type": flag.type,
+    "enabled": flag.enabled,
+    "value": flag.default_value,
+    "user_context": user_context
+}
