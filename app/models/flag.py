@@ -1,4 +1,6 @@
-from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
+from sqlalchemy import Column, Integer, String, Boolean, Text, ForeignKey, DateTime
+from sqlalchemy.sql import func
+
 from app.database.base import Base
 
 
@@ -21,7 +23,22 @@ class Flag(Base):
     )
 
     type = Column(String(20), nullable=False)
+
     default_value = Column(String(255))
-    enabled = Column(Boolean, default=True)
-    description = Column(String(255))
+
+    enabled = Column(Boolean, default=False)
+
+    description = Column(Text)
+
     owner_team = Column(String(100))
+
+    created_at = Column(
+        DateTime(timezone=True),
+        server_default=func.now()
+    )
+
+    updated_at = Column(
+        DateTime(timezone=True),
+        server_default=func.now(),
+        onupdate=func.now()
+    )
