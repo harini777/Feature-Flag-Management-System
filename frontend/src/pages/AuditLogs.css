@@ -1,0 +1,803 @@
+/* =========================================================
+   AUDIT LOGS PAGE
+   Uses the same theme variables as flags.css
+========================================================= */
+
+.audit-page {
+  min-height: 100vh;
+
+  background: var(--bg-primary);
+
+  padding: 35px 40px;
+
+  color: var(--text-primary);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.audit-page-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 30px;
+}
+
+.audit-page-header h1 {
+  margin: 0;
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  color: var(--text-primary);
+}
+
+.audit-page-header p {
+  margin: 7px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   BACK TO DASHBOARD
+========================================================= */
+
+.back-dashboard-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 10px 16px;
+
+  background: var(--bg-input);
+
+  border: 1px solid var(--border-secondary);
+
+  border-radius: 8px;
+
+  color: var(--accent-light);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+}
+
+.back-dashboard-button:hover {
+  background: var(--bg-tertiary);
+
+  border-color: var(--accent);
+
+  color: var(--accent);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   AUDIT SECTION
+========================================================= */
+
+.audit-section {
+  background: var(--bg-secondary);
+
+  border: 1px solid var(--border-primary);
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow: var(--shadow-section);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-header {
+  padding: 22px 24px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  background: var(--bg-tertiary);
+
+  border-bottom: 1px solid var(--border-primary);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.section-header h2 {
+  margin: 0;
+
+  font-size: 19px;
+
+  font-weight: 600;
+
+  color: var(--text-primary);
+}
+
+.section-header p {
+  margin: 6px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   AUDIT COUNT
+========================================================= */
+
+.audit-count {
+  background: var(--bg-input);
+
+  color: var(--accent-light);
+
+  padding: 7px 13px;
+
+  border: 1px solid var(--border-secondary);
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   SEARCH & FILTERS
+========================================================= */
+
+.audit-filters {
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 14px;
+
+  padding: 18px 24px;
+
+  background: var(--bg-primary);
+
+  border-bottom: 1px solid var(--border-primary);
+
+  flex-wrap: wrap;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.filter-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.filter-group label {
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: var(--text-muted);
+}
+
+.filter-group input,
+.filter-group select {
+  height: 38px;
+
+  padding: 0 11px;
+
+  border: 1px solid var(--border-secondary);
+
+  border-radius: 7px;
+
+  background: var(--bg-input);
+
+  color: var(--text-primary);
+
+  font-size: 12px;
+
+  outline: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.filter-group input {
+  width: 145px;
+}
+
+.filter-group select {
+  width: 180px;
+
+  cursor: pointer;
+}
+
+.search-group input {
+  width: 245px;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 0 2px rgba(99, 102, 241, 0.15);
+}
+
+.filter-group input::placeholder {
+  color: var(--text-subtle);
+}
+
+
+/* =========================================================
+   SELECT OPTIONS
+========================================================= */
+
+.filter-group select option {
+  background: var(--bg-secondary);
+
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   CLEAR FILTERS
+========================================================= */
+
+.clear-filters-button {
+  height: 38px;
+
+  padding: 0 15px;
+
+  border: 1px solid var(--border-secondary);
+
+  border-radius: 7px;
+
+  background: var(--bg-tertiary);
+
+  color: var(--accent-light);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.clear-filters-button:hover {
+  background: var(--bg-hover);
+
+  border-color: var(--accent);
+
+  color: var(--accent);
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.audit-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  background: var(--bg-secondary);
+
+  transition: background 0.25s ease;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.audit-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 1100px;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.audit-table th {
+  background: var(--bg-primary);
+
+  padding: 14px 18px;
+
+  text-align: left;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: var(--text-subtle);
+
+  border-bottom: 1px solid var(--border-primary);
+
+  white-space: nowrap;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   TABLE CELLS
+========================================================= */
+
+.audit-table td {
+  padding: 16px 18px;
+
+  border-bottom: 1px solid var(--border-primary);
+
+  font-size: 13px;
+
+  color: var(--text-secondary);
+
+  background: var(--bg-secondary);
+
+  vertical-align: middle;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* =========================================================
+   TABLE ROW HOVER
+========================================================= */
+
+.audit-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.audit-table tbody tr:hover td {
+  background: var(--bg-hover);
+}
+
+
+/* =========================================================
+   ACTION BADGE
+========================================================= */
+
+.action-badge {
+  display: inline-block;
+
+  padding: 6px 10px;
+
+  border-radius: 6px;
+
+  background: rgba(99, 102, 241, 0.13);
+
+  border: 1px solid rgba(99, 102, 241, 0.20);
+
+  color: var(--accent-light);
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   ACTOR
+========================================================= */
+
+.actor {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--text-secondary);
+}
+
+.actor-avatar {
+  width: 28px;
+
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: rgba(99, 102, 241, 0.13);
+
+  border: 1px solid rgba(99, 102, 241, 0.20);
+
+  color: var(--accent-light);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   IDS
+========================================================= */
+
+.id-badge {
+  background: var(--bg-tertiary);
+
+  border: 1px solid var(--border-secondary);
+
+  color: var(--text-secondary);
+
+  padding: 5px 8px;
+
+  border-radius: 5px;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   STATE BOX
+========================================================= */
+
+.state-box {
+  margin: 0;
+
+  padding: 8px 10px;
+
+  background: var(--bg-primary);
+
+  border: 1px solid var(--border-primary);
+
+  border-radius: 6px;
+
+  max-width: 180px;
+
+  max-height: 70px;
+
+  overflow: auto;
+
+  font-size: 10px;
+
+  color: var(--text-muted);
+
+  white-space: normal;
+
+  word-break: break-word;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+
+/* =========================================================
+   STATE CHANGE
+========================================================= */
+
+.state-change {
+  line-height: 1.6;
+}
+
+.state-change strong {
+  color: var(--text-secondary);
+
+  font-weight: 600;
+}
+
+.empty-state {
+  color: var(--text-subtle);
+}
+
+
+/* =========================================================
+   TIMESTAMP
+========================================================= */
+
+.timestamp {
+  color: var(--text-muted);
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   EMPTY AUDIT
+========================================================= */
+
+.empty-audit {
+  padding: 70px 20px;
+
+  text-align: center;
+
+  background: var(--bg-secondary);
+
+  transition: background 0.25s ease;
+}
+
+.empty-icon {
+  font-size: 35px;
+
+  margin-bottom: 10px;
+
+  opacity: 0.8;
+}
+
+.empty-audit h3 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 17px;
+}
+
+.empty-audit p {
+  color: var(--text-subtle);
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.audit-page-message {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: var(--bg-primary);
+
+  color: var(--text-primary);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error-message {
+  color: var(--danger);
+}
+
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+.loader {
+  width: 30px;
+
+  height: 30px;
+
+  border: 3px solid var(--border-primary);
+
+  border-top: 3px solid var(--accent);
+
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.audit-table-wrapper::-webkit-scrollbar {
+  height: 7px;
+}
+
+.audit-table-wrapper::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+.audit-table-wrapper::-webkit-scrollbar-thumb {
+  background: var(--scrollbar);
+
+  border-radius: 10px;
+}
+
+.audit-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-hover);
+}
+
+
+/* =========================================================
+   STATE BOX SCROLLBAR
+========================================================= */
+
+.state-box::-webkit-scrollbar {
+  width: 5px;
+}
+
+.state-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.state-box::-webkit-scrollbar-thumb {
+  background: var(--scrollbar);
+
+  border-radius: 10px;
+}
+
+.state-box::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-hover);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .audit-page {
+    padding: 25px 20px;
+  }
+
+  .audit-page-header {
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  .audit-filters {
+    align-items: stretch;
+  }
+
+  .filter-group input,
+  .filter-group select,
+  .search-group input {
+    width: 100%;
+  }
+
+  .filter-group {
+    flex: 1;
+
+    min-width: 180px;
+  }
+
+  .clear-filters-button {
+    width: fit-content;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .audit-page {
+    padding: 20px 15px;
+  }
+
+  .audit-page-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .audit-page-header h1 {
+    font-size: 24px;
+  }
+
+  .back-dashboard-button {
+    width: fit-content;
+  }
+
+  .section-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .audit-filters {
+    padding: 18px;
+  }
+
+  .filter-group {
+    width: 100%;
+
+    min-width: 100%;
+  }
+
+  .filter-group input,
+  .filter-group select,
+  .search-group input {
+    width: 100%;
+  }
+
+  .clear-filters-button {
+    width: 100%;
+  }
+
+  .audit-section {
+    border-radius: 10px;
+  }
+}

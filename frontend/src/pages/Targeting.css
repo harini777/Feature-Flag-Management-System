@@ -1,0 +1,835 @@
+/* =========================================================
+   TARGETING PAGE
+========================================================= */
+
+.targeting-page {
+  min-height: 100vh;
+  background: var(--page-bg);
+  padding: 36px 42px;
+  color: var(--text-primary);
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   THEME VARIABLES
+========================================================= */
+
+:root {
+  --page-bg: #071a2f;
+
+  --section-bg: #0b2138;
+  --card-bg: #102944;
+  --inner-bg: #0b2036;
+
+  --border: #1d3b5b;
+  --border-light: #23415f;
+  --border-hover: #376080;
+
+  --text-primary: #ffffff;
+  --text-secondary: #9fb0c5;
+  --text-muted: #7f95ad;
+
+  --accent: #2563eb;
+  --accent-hover: #3b82f6;
+  --accent-light: #60a5fa;
+
+  --success: #4ade80;
+
+  --danger: #fb7185;
+  --danger-bg: #351b27;
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+:root[data-theme="light"] {
+  --page-bg: #f8fafc;
+
+  --section-bg: #ffffff;
+  --card-bg: #ffffff;
+  --inner-bg: #f1f5f9;
+
+  --border: #dbe3ee;
+  --border-light: #e2e8f0;
+  --border-hover: #94a3b8;
+
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-muted: #64748b;
+
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-light: #2563eb;
+
+  --success: #16a34a;
+
+  --danger: #dc2626;
+  --danger-bg: #fef2f2;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.targeting-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.targeting-header h1 {
+  margin: 0 0 8px;
+  color: var(--text-primary);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.targeting-header p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   BACK TO DASHBOARD
+========================================================= */
+
+.back-dashboard-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  background: var(--card-bg);
+  color: var(--accent-light);
+
+  border: 1px solid var(--border-light);
+
+  padding: 10px 16px;
+  border-radius: 8px;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  transition: all 0.2s ease;
+}
+
+.back-dashboard-button:hover {
+  background: var(--inner-bg);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.targeting-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+
+  margin-bottom: 28px;
+}
+
+.targeting-summary-card {
+  background: var(--section-bg);
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  padding: 22px 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+
+  transition: all 0.2s ease;
+}
+
+.targeting-summary-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.targeting-summary-card span {
+  display: block;
+
+  color: var(--text-secondary);
+  font-size: 13px;
+
+  margin-bottom: 7px;
+}
+
+.targeting-summary-card strong {
+  color: var(--text-primary);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.targeting-summary-icon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--inner-bg);
+  border: 1px solid var(--border-light);
+
+  border-radius: 12px;
+
+  font-size: 22px;
+}
+
+
+/* =========================================================
+   MAIN TARGETING SECTION
+========================================================= */
+
+.targeting-section {
+  background: var(--section-bg);
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  padding: 26px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 24px;
+
+  gap: 20px;
+}
+
+.section-header h2 {
+  margin: 0 0 6px;
+
+  color: var(--text-primary);
+
+  font-size: 19px;
+  font-weight: 650;
+}
+
+.section-header p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   ADD RULE BUTTON
+========================================================= */
+
+.add-rule-button,
+.empty-add-rule-button {
+  border: none;
+
+  background: var(--accent);
+  color: #ffffff;
+
+  padding: 11px 18px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  white-space: nowrap;
+
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.25);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-rule-button:hover,
+.empty-add-rule-button:hover {
+  background: var(--accent-hover);
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.35);
+}
+
+.add-rule-button:active,
+.empty-add-rule-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   RULE GRID
+========================================================= */
+
+.targeting-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   TARGETING CARD
+========================================================= */
+
+.targeting-card {
+  background: var(--card-bg);
+
+  border: 1px solid var(--border-light);
+
+  border-radius: 13px;
+
+  padding: 20px;
+
+  transition: all 0.2s ease;
+}
+
+.targeting-card:hover {
+  border-color: var(--border-hover);
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.targeting-card-header {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+}
+
+.targeting-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--inner-bg);
+
+  border: 1px solid var(--border-light);
+
+  border-radius: 10px;
+
+  font-size: 20px;
+
+  flex-shrink: 0;
+}
+
+.targeting-card-header h3 {
+  margin: 0 0 4px;
+
+  color: var(--text-primary);
+
+  font-size: 16px;
+  font-weight: 650;
+
+  word-break: break-word;
+}
+
+.targeting-card-header span {
+  color: var(--text-muted);
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   RULE CONDITION
+========================================================= */
+
+.rule-condition {
+  margin-bottom: 18px;
+}
+
+.condition-label {
+  display: block;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  margin-bottom: 7px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.condition-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  flex-wrap: wrap;
+
+  background: var(--inner-bg);
+
+  border: 1px solid var(--border-light);
+
+  border-radius: 8px;
+
+  padding: 10px;
+}
+
+.attribute {
+  color: var(--accent-light);
+
+  font-weight: 600;
+
+  font-size: 13px;
+}
+
+.operator {
+  color: var(--text-secondary);
+
+  font-size: 12px;
+}
+
+.condition-value {
+  color: var(--text-primary);
+
+  background: var(--card-bg);
+
+  border: 1px solid var(--border-light);
+
+  padding: 4px 7px;
+
+  border-radius: 5px;
+
+  font-size: 12px;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   RULE DETAILS
+========================================================= */
+
+.rule-details {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 14px 0;
+
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.rule-detail {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.rule-detail span {
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+.rule-detail strong {
+  color: var(--text-primary);
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   ACTIVE STATUS
+========================================================= */
+
+.rule-active {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: var(--success) !important;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+
+  box-shadow: 0 0 7px currentColor;
+}
+
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.targeting-card-footer {
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 15px;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.view-rule-button {
+  border: 1px solid var(--border-light);
+
+  background: var(--inner-bg);
+
+  color: var(--accent-light);
+
+  padding: 7px 12px;
+
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.view-rule-button:hover {
+  background: var(--card-bg);
+
+  border-color: var(--accent);
+
+  transform: translateY(-1px);
+}
+
+.view-rule-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.edit-rule-button {
+  border: 1px solid rgba(245, 158, 11, 0.25);
+
+  background: rgba(245, 158, 11, 0.13);
+
+  color: #f59e0b;
+
+  padding: 7px 12px;
+
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.edit-rule-button:hover {
+  background: rgba(245, 158, 11, 0.22);
+
+  border-color: rgba(245, 158, 11, 0.40);
+
+  transform: translateY(-1px);
+}
+
+.edit-rule-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.delete-rule-button {
+  border: 1px solid rgba(239, 68, 68, 0.25);
+
+  background: var(--danger-bg);
+
+  color: var(--danger);
+
+  padding: 7px 12px;
+
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.delete-rule-button:hover {
+  background: rgba(239, 68, 68, 0.14);
+
+  border-color: rgba(239, 68, 68, 0.40);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.targeting-empty-state {
+  text-align: center;
+
+  padding: 70px 20px;
+
+  background: var(--section-bg);
+}
+
+.empty-targeting-icon {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--inner-bg);
+
+  border: 1px solid var(--border-light);
+
+  border-radius: 14px;
+
+  font-size: 28px;
+}
+
+.targeting-empty-state h3 {
+  margin: 0 0 8px;
+
+  color: var(--text-primary);
+
+  font-size: 18px;
+}
+
+.targeting-empty-state p {
+  margin: 0 0 20px;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   LOADING / ERROR
+========================================================= */
+
+.targeting-message {
+  min-height: 100vh;
+
+  background: var(--page-bg);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: var(--text-primary);
+}
+
+.targeting-message p {
+  color: var(--text-secondary);
+}
+
+.error-message {
+  color: var(--danger);
+}
+
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+.loader {
+  width: 30px;
+  height: 30px;
+
+  border: 3px solid var(--border-light);
+
+  border-top: 3px solid var(--accent);
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+
+  margin-bottom: 12px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .targeting-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .targeting-page {
+    padding: 24px 18px;
+  }
+
+  .targeting-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 16px;
+  }
+
+  .targeting-header h1 {
+    font-size: 26px;
+  }
+
+  .targeting-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 16px;
+  }
+
+  .add-rule-button {
+    width: 100%;
+  }
+
+  .targeting-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .targeting-section {
+    padding: 20px 16px;
+  }
+
+  .targeting-card {
+    padding: 18px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+  .targeting-page {
+    padding: 20px 14px;
+  }
+
+  .targeting-summary-card {
+    padding: 18px;
+  }
+
+  .targeting-card-footer {
+    justify-content: stretch;
+  }
+
+  .view-rule-button,
+  .edit-rule-button,
+  .delete-rule-button {
+    flex: 1;
+  }
+
+}

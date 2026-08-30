@@ -1,0 +1,246 @@
+:root {
+  --bg-primary: #0b1220;
+  --bg-secondary: #111827;
+  --bg-card: #111a2b;
+  --bg-hover: #1c2738;
+
+  --border: #263247;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --accent: #6366f1;
+  --accent-dark: #4f46e5;
+}
+
+
+/* =========================
+   DARK MODE - DEFAULT
+========================= */
+
+html[data-theme="dark"] {
+  --bg-primary: #0b1220;
+  --bg-secondary: #111827;
+  --bg-card: #111a2b;
+  --bg-hover: #1c2738;
+
+  --border: #263247;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --accent: #6366f1;
+  --accent-dark: #4f46e5;
+}
+
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+html[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-hover: #f1f5f9;
+
+  --border: #e2e8f0;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --accent: #6366f1;
+  --accent-dark: #4f46e5;
+}
+
+
+/* =========================
+   APPLICATION
+========================= */
+
+body {
+  margin: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition:
+    background-color 0.25s ease,
+    
+}
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background: var(--app-bg);
+  color: var(--text-primary);
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+:root,
+html[data-theme="dark"] {
+
+  --app-bg: #0b1220;
+
+  --sidebar-bg: #111827;
+
+  --surface: #111a2b;
+
+  --surface-secondary: #151e2e;
+
+  --surface-hover: #1c2738;
+
+  --border: #263247;
+
+  --border-light: #273244;
+
+  --text-primary: #f8fafc;
+
+  --text-secondary: #cbd5e1;
+
+  --text-muted: #94a3b8;
+
+  --text-subtle: #64748b;
+
+  --accent: #6366f1;
+
+  --accent-dark: #4f46e5;
+
+  --accent-light: #a5b4fc;
+
+  --danger: #f87171;
+
+  --success: #4ade80;
+
+  --input-bg: #0f172a;
+
+  --shadow: rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+html[data-theme="light"] {
+
+  --app-bg: #f5f7fb;
+
+  --sidebar-bg: #ffffff;
+
+  --surface: #ffffff;
+
+  --surface-secondary: #f8fafc;
+
+  --surface-hover: #eef2ff;
+
+  --border: #e2e8f0;
+
+  --border-light: #e5e7eb;
+
+  --text-primary: #172033;
+
+  --text-secondary: #334155;
+
+  --text-muted: #64748b;
+
+  --text-subtle: #94a3b8;
+
+  --accent: #4f46e5;
+
+  --accent-dark: #4338ca;
+
+  --accent-light: #6366f1;
+
+  --danger: #dc2626;
+
+  --success: #16a34a;
+
+  --input-bg: #ffffff;
+
+  --shadow: rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================================
+   GLOBAL PAGE
+========================================================= */
+
+body {
+  background: var(--app-bg);
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   COMMON TRANSITIONS
+========================================================= */
+
+.dashboard-container,
+.sidebar,
+.sidebar-bottom,
+.main-content,
+.chart-section,
+.flag-card,
+.settings-page,
+.settings-section,
+.password-modal,
+input,
+select,
+button,
+.nav-item {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}

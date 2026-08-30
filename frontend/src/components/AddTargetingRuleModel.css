@@ -1,0 +1,612 @@
+/* =========================================================
+   ADD TARGETING RULE MODAL
+   Professional Navy Theme
+   ========================================================= */
+
+/* Dark overlay */
+.targeting-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(2, 8, 23, 0.78);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  overflow-y: auto;
+}
+
+
+/* =========================================================
+   MAIN MODAL
+   ========================================================= */
+
+.targeting-modal {
+  width: 100%;
+  max-width: 540px;
+
+  max-height: 90vh;
+
+  background: #0b1630;
+
+  border: 1px solid #263858;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(99, 102, 241, 0.08);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  color: #f8fafc;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+   ========================================================= */
+
+.targeting-modal-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 26px 28px 22px;
+
+  border-bottom: 1px solid #243452;
+
+  background: #0d1a36;
+
+  flex-shrink: 0;
+}
+
+
+.targeting-modal-header h2 {
+  margin: 0 0 7px;
+
+  color: #f8fafc;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  letter-spacing: -0.3px;
+}
+
+
+.targeting-modal-header p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.targeting-close-button {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #334566;
+
+  border-radius: 8px;
+
+  background: #111f3d;
+
+  color: #94a3b8;
+
+  font-size: 22px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+.targeting-close-button:hover {
+  background: #17294c;
+
+  border-color: #6366f1;
+
+  color: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.targeting-modal form {
+  padding: 25px 28px 28px;
+
+  overflow-y: auto;
+
+  flex: 1;
+
+  min-height: 0;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+   ========================================================= */
+
+.targeting-form-error {
+  background: rgba(127, 29, 29, 0.25);
+
+  color: #fca5a5;
+
+  border: 1px solid rgba(248, 113, 113, 0.35);
+
+  border-radius: 9px;
+
+  padding: 11px 14px;
+
+  margin-bottom: 20px;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.targeting-form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+.targeting-form-group label {
+  color: #e2e8f0;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  margin-bottom: 8px;
+
+  letter-spacing: 0.1px;
+}
+
+
+/* =========================================================
+   INPUTS + SELECTS
+   ========================================================= */
+
+.targeting-form-group input,
+.targeting-form-group select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #334566;
+
+  border-radius: 9px;
+
+  padding: 12px 13px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  outline: none;
+
+  background: #111f3d;
+
+  color: #f8fafc;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+/* Placeholder */
+
+.targeting-form-group input::placeholder {
+  color: #64748b;
+}
+
+
+/* Select option */
+
+.targeting-form-group select option {
+  background: #111f3d;
+
+  color: #f8fafc;
+}
+
+
+/* Focus */
+
+.targeting-form-group input:focus,
+.targeting-form-group select:focus {
+  border-color: #6366f1;
+
+  background: #142344;
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.16);
+}
+
+
+/* Hover */
+
+.targeting-form-group input:hover:not(:disabled),
+.targeting-form-group select:hover:not(:disabled) {
+  border-color: #465a7d;
+}
+
+
+/* Disabled */
+
+.targeting-form-group input:disabled,
+.targeting-form-group select:disabled {
+  background: #0a142b;
+
+  color: #64748b;
+
+  cursor: not-allowed;
+
+  opacity: 0.65;
+}
+
+
+/* =========================================================
+   PERCENTAGE ROLLOUT
+   ========================================================= */
+
+.percentage-rollout-section {
+  margin-bottom: 20px;
+
+  padding: 19px;
+
+  background: #0f1d38;
+
+  border: 1px solid #2b3d5d;
+
+  border-radius: 11px;
+}
+
+
+/* Percentage header */
+
+.percentage-rollout-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 18px;
+}
+
+
+.percentage-rollout-header label {
+  color: #e2e8f0;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+.percentage-rollout-header strong {
+  color: #818cf8;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   RANGE SLIDER
+   ========================================================= */
+
+.percentage-slider {
+  width: 100%;
+
+  height: 6px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  background: #293b5c;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+
+/* Chrome / Edge */
+
+.percentage-slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: #6366f1;
+
+  cursor: pointer;
+
+  border: 3px solid #0f1d38;
+
+  box-shadow:
+    0 0 0 1px #818cf8;
+
+  transition: transform 0.2s ease;
+}
+
+
+.percentage-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+
+/* Firefox */
+
+.percentage-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: #6366f1;
+
+  cursor: pointer;
+
+  border: 3px solid #0f1d38;
+
+  box-shadow:
+    0 0 0 1px #818cf8;
+}
+
+
+/* Disabled slider */
+
+.percentage-slider:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+
+/* Slider labels */
+
+.percentage-slider-labels {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 9px;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+
+/* Helper */
+
+.percentage-help-text {
+  margin: 12px 0 0;
+
+  color: #8190a8;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   BUTTON AREA
+   ========================================================= */
+
+.targeting-modal-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding-top: 20px;
+
+  margin-top: 8px;
+
+  border-top: 1px solid #243452;
+}
+
+
+/* Common button */
+
+.targeting-cancel-button,
+.targeting-create-button {
+  border-radius: 9px;
+
+  padding: 11px 19px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+/* =========================================================
+   CANCEL
+   ========================================================= */
+
+.targeting-cancel-button {
+  border: 1px solid #334566;
+
+  background: #111f3d;
+
+  color: #cbd5e1;
+}
+
+
+.targeting-cancel-button:hover {
+  background: #17294c;
+
+  border-color: #465a7d;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   CREATE RULE
+   ========================================================= */
+
+.targeting-create-button {
+  border: 1px solid #6366f1;
+
+  background: #4f46e5;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 5px 16px rgba(79, 70, 229, 0.25);
+}
+
+
+.targeting-create-button:hover {
+  background: #6366f1;
+
+  border-color: #818cf8;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 20px rgba(79, 70, 229, 0.35);
+}
+
+
+.targeting-create-button:active {
+  transform: translateY(0);
+}
+
+
+/* Disabled buttons */
+
+.targeting-cancel-button:disabled,
+.targeting-create-button:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.targeting-modal form::-webkit-scrollbar {
+  width: 6px;
+}
+
+
+.targeting-modal form::-webkit-scrollbar-track {
+  background: #0a142b;
+}
+
+
+.targeting-modal form::-webkit-scrollbar-thumb {
+  background: #334566;
+
+  border-radius: 10px;
+}
+
+
+.targeting-modal form::-webkit-scrollbar-thumb:hover {
+  background: #465a7d;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .targeting-modal-overlay {
+    padding: 12px;
+  }
+
+  .targeting-modal {
+    max-height: 92vh;
+
+    border-radius: 14px;
+  }
+
+  .targeting-modal-header {
+    padding: 21px;
+  }
+
+  .targeting-modal-header h2 {
+    font-size: 19px;
+  }
+
+  .targeting-modal form {
+    padding: 21px;
+  }
+
+  .targeting-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .targeting-cancel-button,
+  .targeting-create-button {
+    width: 100%;
+  }
+}

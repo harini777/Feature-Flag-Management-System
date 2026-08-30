@@ -1,0 +1,621 @@
+/* =========================================================
+   THEME VARIABLES
+========================================================= */
+
+:root {
+  /* DEFAULT = DARK */
+
+  --auth-bg-primary: #0b1220;
+  --auth-bg-secondary: #111827;
+  --auth-bg-input: rgba(255, 255, 255, 0.045);
+  --auth-bg-input-hover: rgba(255, 255, 255, 0.06);
+
+  --auth-border-primary: rgba(255, 255, 255, 0.10);
+  --auth-border-secondary: rgba(255, 255, 255, 0.12);
+
+  --auth-text-primary: #f8fafc;
+  --auth-text-secondary: #d5dbea;
+  --auth-text-muted: #8f9ab1;
+  --auth-text-subtle: #7f8aa2;
+  --auth-text-placeholder: #69748b;
+
+  --auth-accent: #6366f1;
+  --auth-accent-dark: #4f46e5;
+  --auth-accent-light: #a5b4fc;
+
+  --auth-danger: #fca5a5;
+
+  --auth-shadow-card:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  --auth-overlay-glow-one: rgba(76, 87, 255, 0.15);
+  --auth-overlay-glow-two: rgba(139, 92, 246, 0.12);
+
+  --auth-grid-line: rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================================
+   LIGHT THEME
+   =========================================================
+   Temporary appearance theme:
+   Applied when <html data-theme="light">
+========================================================= */
+
+html[data-theme="light"] {
+
+  --auth-bg-primary: #f8fafc;
+  --auth-bg-secondary: #ffffff;
+  --auth-bg-input: #ffffff;
+  --auth-bg-input-hover: #f8fafc;
+
+  --auth-border-primary: #e2e8f0;
+  --auth-border-secondary: #dbe3ee;
+
+  --auth-text-primary: #0f172a;
+  --auth-text-secondary: #334155;
+  --auth-text-muted: #64748b;
+  --auth-text-subtle: #64748b;
+  --auth-text-placeholder: #94a3b8;
+
+  --auth-accent: #6366f1;
+  --auth-accent-dark: #4f46e5;
+  --auth-accent-light: #4f46e5;
+
+  --auth-danger: #dc2626;
+
+  --auth-shadow-card:
+    0 25px 70px rgba(15, 23, 42, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+  --auth-overlay-glow-one: rgba(99, 102, 241, 0.10);
+  --auth-overlay-glow-two: rgba(124, 58, 237, 0.08);
+
+  --auth-grid-line: rgba(15, 23, 42, 0.035);
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+
+/* =========================================================
+   MAIN BACKGROUND
+========================================================= */
+
+.auth-container {
+  min-height: 100vh;
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 30px 20px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 75% 20%,
+      var(--auth-overlay-glow-one),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 15% 80%,
+      var(--auth-overlay-glow-two),
+      transparent 28%
+    ),
+    var(--auth-bg-primary);
+
+  color: var(--auth-text-primary);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.auth-grid {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      var(--auth-grid-line) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      var(--auth-grid-line) 1px,
+      transparent 1px
+    );
+
+  background-size: 50px 50px;
+
+  opacity: 0.7;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   GLOW EFFECTS
+========================================================= */
+
+.auth-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(90px);
+
+  pointer-events: none;
+}
+
+.auth-glow-one {
+  width: 350px;
+
+  height: 350px;
+
+  top: -100px;
+
+  right: -80px;
+
+  background: var(--auth-overlay-glow-one);
+}
+
+.auth-glow-two {
+  width: 300px;
+
+  height: 300px;
+
+  bottom: -100px;
+
+  left: -100px;
+
+  background: var(--auth-overlay-glow-two);
+}
+
+
+/* =========================================================
+   REGISTER / LOGIN CARD
+========================================================= */
+
+.auth-card {
+  position: relative;
+
+  z-index: 2;
+
+  width: 420px;
+
+  padding: 38px 40px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--auth-bg-secondary),
+      var(--auth-bg-primary)
+    );
+
+  border: 1px solid var(--auth-border-primary);
+
+  box-shadow: var(--auth-shadow-card);
+
+  backdrop-filter: blur(20px);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.auth-logo {
+  width: 52px;
+
+  height: 52px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #7c3aed
+    );
+
+  box-shadow:
+    0 10px 30px rgba(99, 102, 241, 0.3);
+
+  font-size: 24px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.auth-card h1 {
+  margin: 0;
+
+  text-align: center;
+
+  color: var(--auth-text-primary);
+
+  font-size: 29px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.7px;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.auth-subtitle {
+  margin: 9px 0 28px;
+
+  text-align: center;
+
+  color: var(--auth-text-muted);
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.auth-error {
+  padding: 11px 13px;
+
+  margin-bottom: 20px;
+
+  border-radius: 8px;
+
+  border: 1px solid rgba(248, 113, 113, 0.25);
+
+  background: rgba(127, 29, 29, 0.18);
+
+  color: var(--auth-danger);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   INPUT GROUP
+========================================================= */
+
+.auth-input-group {
+  margin-bottom: 18px;
+}
+
+.auth-input-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--auth-text-secondary);
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.auth-input-group input {
+  width: 100%;
+
+  height: 45px;
+
+  padding: 0 13px;
+
+  border: 1px solid var(--auth-border-primary);
+
+  border-radius: 8px;
+
+  outline: none;
+
+  background: var(--auth-bg-input);
+
+  color: var(--auth-text-primary);
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.auth-input-group input::placeholder {
+  color: var(--auth-text-placeholder);
+}
+
+.auth-input-group input:hover {
+  background: var(--auth-bg-input-hover);
+}
+
+.auth-input-group input:focus {
+  border-color: #818cf8;
+
+  background: var(--auth-bg-input-hover);
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+/* =========================================================
+   PASSWORD INPUT
+========================================================= */
+
+.password-input-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding-right: 48px;
+}
+
+
+/* =========================================================
+   PASSWORD EYE
+========================================================= */
+
+.password-eye-button {
+  position: absolute;
+
+  right: 10px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 32px;
+
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  color: var(--auth-text-muted);
+
+  font-size: 17px;
+
+  opacity: 0.75;
+
+  transition:
+    opacity 0.2s ease,
+    color 0.2s ease;
+}
+
+.password-eye-button:hover {
+  opacity: 1;
+
+  color: var(--auth-accent-light);
+}
+
+.password-eye-button:focus {
+  outline: none;
+}
+
+.password-eye-button:active {
+  transform: translateY(-50%);
+}
+
+
+/* =========================================================
+   REGISTER / LOGIN BUTTON
+========================================================= */
+
+.auth-button {
+  width: 100%;
+
+  height: 45px;
+
+  margin-top: 6px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #7c3aed
+    );
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(99, 102, 241, 0.2);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 35px rgba(99, 102, 241, 0.35);
+}
+
+.auth-button:active {
+  transform: translateY(0);
+}
+
+.auth-button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.auth-footer {
+  margin: 25px 0 0;
+
+  text-align: center;
+
+  color: var(--auth-text-subtle);
+
+  font-size: 13px;
+}
+
+.auth-footer span {
+  color: var(--auth-accent-light);
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.auth-footer span:hover {
+  color: #c4b5fd;
+
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   LIGHT THEME — CARD ENHANCEMENT
+========================================================= */
+
+html[data-theme="light"] .auth-card {
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f8fafc
+    );
+
+  border-color: #e2e8f0;
+}
+
+html[data-theme="light"] .auth-error {
+  background: rgba(239, 68, 68, 0.07);
+
+  border-color: rgba(220, 38, 38, 0.20);
+
+  color: #dc2626;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .auth-container {
+    padding: 20px 15px;
+  }
+
+  .auth-card {
+    width: 100%;
+
+    padding: 32px 25px;
+  }
+
+  .auth-card h1 {
+    font-size: 25px;
+  }
+
+  .auth-logo {
+    width: 48px;
+
+    height: 48px;
+
+    font-size: 21px;
+  }
+}

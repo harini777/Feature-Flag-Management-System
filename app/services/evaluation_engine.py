@@ -9,6 +9,20 @@ from app.cache.redis_client import redis_client
 from app.services.rollout_service import is_user_in_rollout
 
 
+def _cache_get(cache_key: str):
+    try:
+        return redis_client.get(cache_key)
+    except Exception:
+        return None
+
+
+def _cache_set(cache_key: str, value: str):
+    try:
+        redis_client.set(cache_key, value)
+    except Exception:
+        pass
+
+
 def evaluate_flag(
     db: Session,
     flag_key: str,
@@ -54,7 +68,7 @@ def evaluate_flag(
     cache_key = f"{environment.name}:{flag.key}:{user_id}"
 
     # Check Redis cache
-    cached_value = redis_client.get(cache_key)
+    cached_value = _cache_get(cache_key)
 
     if cached_value is not None:
         return {
@@ -84,7 +98,7 @@ def evaluate_flag(
         )
 
         if rule:
-            redis_client.set(cache_key, "true")
+            _cache_set(cache_key, "true")
 
             return {
                 "success": True,
@@ -122,7 +136,7 @@ def evaluate_flag(
             )
 
             if rule:
-                redis_client.set(cache_key, "true")
+                _cache_set(cache_key, "true")
 
                 return {
                     "success": True,
@@ -156,7 +170,7 @@ def evaluate_flag(
                 flag_key=flag.key,
                 rollout_percentage=rollout_percentage
             ):
-                redis_client.set(cache_key, "true")
+                _cache_set(cache_key, "true")
 
                 return {
                     "success": True,
@@ -170,7 +184,7 @@ def evaluate_flag(
                 }
 
     # Return default flag state
-    redis_client.set(
+    _cache_set(
         cache_key,
         str(flag.enabled).lower()
     )

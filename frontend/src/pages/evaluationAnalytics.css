@@ -1,0 +1,1112 @@
+/* =========================================================
+   EVALUATION ANALYTICS PAGE
+   Supports:
+   - Navy Theme (default)
+   - Light Theme
+   ========================================================= */
+
+
+/* =========================================================
+   NAVY THEME - DEFAULT
+   ========================================================= */
+
+.evaluation-page {
+  min-height: 100vh;
+
+  background: #071329;
+
+  padding: 32px 40px;
+
+  color: #e2e8f0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.evaluation-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 30px;
+}
+
+.evaluation-header h1 {
+  margin: 0;
+
+  font-size: 28px;
+
+  color: #f8fafc;
+
+  font-weight: 700;
+
+  letter-spacing: -0.4px;
+}
+
+.evaluation-header p {
+  margin: 7px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   BACK TO DASHBOARD
+   ========================================================= */
+
+.back-dashboard-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 10px 16px;
+
+  background: #111f3d;
+
+  border: 1px solid #2c3e60;
+
+  border-radius: 8px;
+
+  color: #cbd5e1;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+}
+
+.back-dashboard-button:hover {
+  background: #18294b;
+
+  border-color: #4f46e5;
+
+  color: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   WHY THIS ANALYTICS
+   ========================================================= */
+
+.analytics-info {
+  display: flex;
+
+  gap: 18px;
+
+  align-items: flex-start;
+
+  background: #0b1933;
+
+  border: 1px solid #243657;
+
+  border-radius: 14px;
+
+  padding: 25px;
+
+  margin-bottom: 30px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.18);
+
+  transition: all 0.2s ease;
+}
+
+.analytics-info:hover {
+  border-color: #344b72;
+
+  transform: translateY(-1px);
+}
+
+.analytics-info-icon {
+  width: 48px;
+
+  height: 48px;
+
+  min-width: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #172653;
+
+  border: 1px solid #2d4080;
+
+  border-radius: 11px;
+
+  font-size: 23px;
+
+  box-shadow:
+    0 5px 15px rgba(79, 70, 229, 0.15);
+}
+
+.analytics-info h2 {
+  margin: 0 0 10px;
+
+  font-size: 20px;
+
+  color: #f8fafc;
+
+  font-weight: 700;
+}
+
+.analytics-info p {
+  margin: 0;
+
+  max-width: 900px;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   METRICS
+   ========================================================= */
+
+.analytics-metrics {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 30px;
+}
+
+.metric-card {
+  position: relative;
+
+  background: #0b1933;
+
+  border: 1px solid #243657;
+
+  border-radius: 14px;
+
+  padding: 22px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  overflow: hidden;
+}
+
+.metric-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+  height: 3px;
+
+  background: #4f46e5;
+
+  opacity: 0.8;
+}
+
+.metric-card:hover {
+  border-color: #465b83;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.metric-label {
+  display: block;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  margin-bottom: 10px;
+}
+
+.metric-value {
+  display: block;
+
+  color: #f8fafc;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  margin-bottom: 9px;
+}
+
+.metric-description {
+  display: block;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   ANALYTICS SECTION
+   ========================================================= */
+
+.analytics-section {
+  background: #0b1933;
+
+  border: 1px solid #243657;
+
+  border-radius: 14px;
+
+  padding: 25px;
+
+  margin-bottom: 30px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.16);
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.analytics-section-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 10px;
+}
+
+.analytics-section-header h2 {
+  margin: 0;
+
+  font-size: 20px;
+
+  color: #f8fafc;
+
+  font-weight: 700;
+}
+
+.analytics-section-header p {
+  margin: 6px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   FLAG FILTER
+   ========================================================= */
+
+.flag-filter {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.flag-filter label {
+  color: #94a3b8;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.flag-filter select {
+  min-width: 180px;
+
+  padding: 9px 12px;
+
+  background: #111f3d;
+
+  border: 1px solid #334766;
+
+  border-radius: 8px;
+
+  color: #e2e8f0;
+
+  font-size: 12px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.flag-filter select option {
+  background: #111f3d;
+
+  color: #f8fafc;
+}
+
+.flag-filter select:hover {
+  border-color: #465b83;
+}
+
+.flag-filter select:focus {
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.14);
+}
+
+
+/* =========================================================
+   EVALUATION CHART
+   ========================================================= */
+
+.evaluation-chart {
+  width: 100%;
+
+  height: 400px;
+
+  margin-top: 15px;
+}
+
+
+/* Recharts */
+
+.evaluation-chart .recharts-cartesian-axis-tick-value {
+  fill: #94a3b8;
+}
+
+.evaluation-chart .recharts-cartesian-axis-line,
+.evaluation-chart .recharts-cartesian-axis-tick-line {
+  stroke: #334766;
+}
+
+.evaluation-chart .recharts-cartesian-grid-horizontal line,
+.evaluation-chart .recharts-cartesian-grid-vertical line {
+  stroke: #1e3152;
+}
+
+.evaluation-chart .recharts-tooltip-wrapper {
+  outline: none;
+}
+
+
+/* =========================================================
+   NO ANALYTICS
+   ========================================================= */
+
+.no-analytics {
+  width: 100%;
+
+  height: 100%;
+
+  min-height: 300px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  color: #94a3b8;
+}
+
+.no-analytics > div {
+  font-size: 40px;
+
+  margin-bottom: 10px;
+
+  opacity: 0.8;
+}
+
+.no-analytics h3 {
+  margin: 0;
+
+  color: #cbd5e1;
+
+  font-size: 16px;
+}
+
+.no-analytics p {
+  margin: 7px 0 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   DATA EXPLANATION
+   ========================================================= */
+
+.analytics-explanation {
+  background: #0b1933;
+
+  border: 1px solid #243657;
+
+  border-radius: 14px;
+
+  padding: 25px;
+
+  margin-bottom: 30px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.16);
+}
+
+.analytics-explanation h2 {
+  margin: 0 0 20px;
+
+  font-size: 20px;
+
+  color: #f8fafc;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   EXPLANATION GRID
+   ========================================================= */
+
+.explanation-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.explanation-grid > div {
+  padding: 17px;
+
+  background: #101f3d;
+
+  border: 1px solid #263b5d;
+
+  border-radius: 10px;
+
+  transition: all 0.2s ease;
+}
+
+.explanation-grid > div:hover {
+  border-color: #3b4f73;
+
+  background: #132442;
+
+  transform: translateY(-2px);
+}
+
+.explanation-grid strong {
+  display: block;
+
+  color: #e2e8f0;
+
+  font-size: 13px;
+
+  margin-bottom: 7px;
+}
+
+.explanation-grid p {
+  margin: 0;
+
+  color: #8291a9;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   LOADING / ERROR
+   ========================================================= */
+
+.analytics-message {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #071329;
+
+  color: #94a3b8;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.analytics-message p {
+  margin-top: 10px;
+
+  font-size: 14px;
+}
+
+.analytics-error {
+  color: #f87171;
+}
+
+.analytics-error a {
+  margin-top: 10px;
+
+  color: #818cf8;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.analytics-error a:hover {
+  text-decoration: underline;
+
+  color: #a5b4fc;
+}
+
+
+/* =========================================================
+   LOADER
+   ========================================================= */
+
+.analytics-loader {
+  width: 30px;
+
+  height: 30px;
+
+  border: 3px solid #263957;
+
+  border-top-color: #6366f1;
+
+  border-radius: 50%;
+
+  animation: analytics-spin 0.8s linear infinite;
+}
+
+@keyframes analytics-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   LIGHT APPEARANCE
+   ========================================================= */
+
+/*
+   These selectors support the common theme implementations:
+
+   .light
+   [data-theme="light"]
+   [data-theme="light-mode"]
+
+   So your Evaluation Analytics page changes when
+   Appearance → Light is selected.
+*/
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.light .evaluation-page,
+[data-theme="light"] .evaluation-page,
+[data-theme="light-mode"] .evaluation-page {
+  background: #f8fafc;
+
+  color: #1e293b;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.light .evaluation-header h1,
+[data-theme="light"] .evaluation-header h1,
+[data-theme="light-mode"] .evaluation-header h1 {
+  color: #0f172a;
+}
+
+.light .evaluation-header p,
+[data-theme="light"] .evaluation-header p,
+[data-theme="light-mode"] .evaluation-header p {
+  color: #64748b;
+}
+
+
+/* =========================================================
+   BACK DASHBOARD
+   ========================================================= */
+
+.light .back-dashboard-button,
+[data-theme="light"] .back-dashboard-button,
+[data-theme="light-mode"] .back-dashboard-button {
+  background: #ffffff;
+
+  border-color: #e2e8f0;
+
+  color: #475569;
+
+  box-shadow:
+    0 2px 6px rgba(15, 23, 42, 0.05);
+}
+
+.light .back-dashboard-button:hover,
+[data-theme="light"] .back-dashboard-button:hover,
+[data-theme="light-mode"] .back-dashboard-button:hover {
+  background: #f8fafc;
+
+  border-color: #6366f1;
+
+  color: #4f46e5;
+
+  box-shadow:
+    0 4px 10px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================================
+   ANALYTICS INFO
+   ========================================================= */
+
+.light .analytics-info,
+[data-theme="light"] .analytics-info,
+[data-theme="light-mode"] .analytics-info {
+  background: #ffffff;
+
+  border-color: #e2e8f0;
+
+  box-shadow:
+    0 6px 20px rgba(15, 23, 42, 0.06);
+}
+
+.light .analytics-info:hover,
+[data-theme="light"] .analytics-info:hover,
+[data-theme="light-mode"] .analytics-info:hover {
+  border-color: #c7d2fe;
+
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.light .analytics-info-icon,
+[data-theme="light"] .analytics-info-icon,
+[data-theme="light-mode"] .analytics-info-icon {
+  background: #eef2ff;
+
+  border-color: #c7d2fe;
+
+  box-shadow:
+    0 5px 15px rgba(79, 70, 229, 0.10);
+}
+
+.light .analytics-info h2,
+[data-theme="light"] .analytics-info h2,
+[data-theme="light-mode"] .analytics-info h2 {
+  color: #0f172a;
+}
+
+.light .analytics-info p,
+[data-theme="light"] .analytics-info p,
+[data-theme="light-mode"] .analytics-info p {
+  color: #64748b;
+}
+
+
+/* =========================================================
+   METRIC CARDS
+   ========================================================= */
+
+.light .metric-card,
+[data-theme="light"] .metric-card,
+[data-theme="light-mode"] .metric-card {
+  background: #ffffff;
+
+  border-color: #e2e8f0;
+
+  box-shadow:
+    0 5px 16px rgba(15, 23, 42, 0.05);
+}
+
+.light .metric-card:hover,
+[data-theme="light"] .metric-card:hover,
+[data-theme="light-mode"] .metric-card:hover {
+  border-color: #c7d2fe;
+
+  box-shadow:
+    0 12px 28px rgba(15, 23, 42, 0.10);
+}
+
+.light .metric-card::before,
+[data-theme="light"] .metric-card::before,
+[data-theme="light-mode"] .metric-card::before {
+  background: #6366f1;
+}
+
+.light .metric-label,
+[data-theme="light"] .metric-label,
+[data-theme="light-mode"] .metric-label {
+  color: #64748b;
+}
+
+.light .metric-value,
+[data-theme="light"] .metric-value,
+[data-theme="light-mode"] .metric-value {
+  color: #0f172a;
+}
+
+.light .metric-description,
+[data-theme="light"] .metric-description,
+[data-theme="light-mode"] .metric-description {
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   ANALYTICS SECTION
+   ========================================================= */
+
+.light .analytics-section,
+[data-theme="light"] .analytics-section,
+[data-theme="light-mode"] .analytics-section {
+  background: #ffffff;
+
+  border-color: #e2e8f0;
+
+  box-shadow:
+    0 6px 20px rgba(15, 23, 42, 0.06);
+}
+
+.light .analytics-section-header h2,
+[data-theme="light"] .analytics-section-header h2,
+[data-theme="light-mode"] .analytics-section-header h2 {
+  color: #0f172a;
+}
+
+.light .analytics-section-header p,
+[data-theme="light"] .analytics-section-header p,
+[data-theme="light-mode"] .analytics-section-header p {
+  color: #64748b;
+}
+
+
+/* =========================================================
+   FLAG FILTER
+   ========================================================= */
+
+.light .flag-filter label,
+[data-theme="light"] .flag-filter label,
+[data-theme="light-mode"] .flag-filter label {
+  color: #475569;
+}
+
+.light .flag-filter select,
+[data-theme="light"] .flag-filter select,
+[data-theme="light-mode"] .flag-filter select {
+  background: #ffffff;
+
+  border-color: #cbd5e1;
+
+  color: #334155;
+}
+
+.light .flag-filter select option,
+[data-theme="light"] .flag-filter select option,
+[data-theme="light-mode"] .flag-filter select option {
+  background: #ffffff;
+
+  color: #1e293b;
+}
+
+.light .flag-filter select:hover,
+[data-theme="light"] .flag-filter select:hover,
+[data-theme="light-mode"] .flag-filter select:hover {
+  border-color: #94a3b8;
+}
+
+.light .flag-filter select:focus,
+[data-theme="light"] .flag-filter select:focus,
+[data-theme="light-mode"] .flag-filter select:focus {
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+/* =========================================================
+   RECHARTS - LIGHT
+   ========================================================= */
+
+.light .evaluation-chart .recharts-cartesian-axis-tick-value,
+[data-theme="light"] .evaluation-chart .recharts-cartesian-axis-tick-value,
+[data-theme="light-mode"] .evaluation-chart .recharts-cartesian-axis-tick-value {
+  fill: #64748b;
+}
+
+.light .evaluation-chart .recharts-cartesian-axis-line,
+.light .evaluation-chart .recharts-cartesian-axis-tick-line,
+[data-theme="light"] .evaluation-chart .recharts-cartesian-axis-line,
+[data-theme="light"] .evaluation-chart .recharts-cartesian-axis-tick-line,
+[data-theme="light-mode"] .evaluation-chart .recharts-cartesian-axis-line,
+[data-theme="light-mode"] .evaluation-chart .recharts-cartesian-axis-tick-line {
+  stroke: #cbd5e1;
+}
+
+.light .evaluation-chart .recharts-cartesian-grid-horizontal line,
+.light .evaluation-chart .recharts-cartesian-grid-vertical line,
+[data-theme="light"] .evaluation-chart .recharts-cartesian-grid-horizontal line,
+[data-theme="light"] .evaluation-chart .recharts-cartesian-grid-vertical line,
+[data-theme="light-mode"] .evaluation-chart .recharts-cartesian-grid-horizontal line,
+[data-theme="light-mode"] .evaluation-chart .recharts-cartesian-grid-vertical line {
+  stroke: #e2e8f0;
+}
+
+
+/* =========================================================
+   NO ANALYTICS
+   ========================================================= */
+
+.light .no-analytics,
+[data-theme="light"] .no-analytics,
+[data-theme="light-mode"] .no-analytics {
+  color: #64748b;
+}
+
+.light .no-analytics h3,
+[data-theme="light"] .no-analytics h3,
+[data-theme="light-mode"] .no-analytics h3 {
+  color: #334155;
+}
+
+.light .no-analytics p,
+[data-theme="light"] .no-analytics p,
+[data-theme="light-mode"] .no-analytics p {
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   EXPLANATION
+   ========================================================= */
+
+.light .analytics-explanation,
+[data-theme="light"] .analytics-explanation,
+[data-theme="light-mode"] .analytics-explanation {
+  background: #ffffff;
+
+  border-color: #e2e8f0;
+
+  box-shadow:
+    0 6px 20px rgba(15, 23, 42, 0.06);
+}
+
+.light .analytics-explanation h2,
+[data-theme="light"] .analytics-explanation h2,
+[data-theme="light-mode"] .analytics-explanation h2 {
+  color: #0f172a;
+}
+
+.light .explanation-grid > div,
+[data-theme="light"] .explanation-grid > div,
+[data-theme="light-mode"] .explanation-grid > div {
+  background: #f8fafc;
+
+  border-color: #e2e8f0;
+}
+
+.light .explanation-grid > div:hover,
+[data-theme="light"] .explanation-grid > div:hover,
+[data-theme="light-mode"] .explanation-grid > div:hover {
+  background: #eef2ff;
+
+  border-color: #c7d2fe;
+}
+
+.light .explanation-grid strong,
+[data-theme="light"] .explanation-grid strong,
+[data-theme="light-mode"] .explanation-grid strong {
+  color: #334155;
+}
+
+.light .explanation-grid p,
+[data-theme="light"] .explanation-grid p,
+[data-theme="light-mode"] .explanation-grid p {
+  color: #64748b;
+}
+
+
+/* =========================================================
+   LOADING / ERROR - LIGHT
+   ========================================================= */
+
+.light .analytics-message,
+[data-theme="light"] .analytics-message,
+[data-theme="light-mode"] .analytics-message {
+  background: #f8fafc;
+
+  color: #64748b;
+}
+
+.light .analytics-error,
+[data-theme="light"] .analytics-error,
+[data-theme="light-mode"] .analytics-error {
+  color: #dc2626;
+}
+
+.light .analytics-error a,
+[data-theme="light"] .analytics-error a,
+[data-theme="light-mode"] .analytics-error a {
+  color: #4f46e5;
+}
+
+
+/* =========================================================
+   LOADER - LIGHT
+   ========================================================= */
+
+.light .analytics-loader,
+[data-theme="light"] .analytics-loader,
+[data-theme="light-mode"] .analytics-loader {
+  border-color: #e2e8f0;
+
+  border-top-color: #6366f1;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .analytics-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .explanation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-section-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .flag-filter {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .evaluation-page {
+    padding: 20px;
+  }
+
+  .evaluation-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .evaluation-header h1 {
+    font-size: 24px;
+  }
+
+  .back-dashboard-button {
+    width: fit-content;
+  }
+
+  .analytics-info {
+    flex-direction: column;
+
+    padding: 20px;
+  }
+
+  .analytics-info-icon {
+    width: 42px;
+
+    height: 42px;
+
+    min-width: 42px;
+
+    font-size: 19px;
+  }
+
+  .analytics-section {
+    padding: 18px;
+  }
+
+  .evaluation-chart {
+    height: 300px;
+  }
+
+  .flag-filter {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .flag-filter select {
+    width: 100%;
+  }
+
+  .analytics-explanation {
+    padding: 18px;
+  }
+}
