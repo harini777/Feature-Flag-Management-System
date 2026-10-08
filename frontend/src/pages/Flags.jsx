@@ -314,6 +314,49 @@ function Flags() {
 
 
   // =====================================================
+  // FLAG DELETED
+  // =====================================================
+
+  const handleDeleteFlag = async (flag) => {
+
+    const confirmed = window.confirm(
+      `Are you sure you want to delete "${flag.key}"? This will also remove all its targeting rules.`
+    );
+
+    if (!confirmed) return;
+
+    try {
+
+      await api.delete(`/flags/${flag.flag_id}`);
+
+      setFlags((currentFlags) =>
+        currentFlags.filter(
+          (currentFlag) => currentFlag.flag_id !== flag.flag_id
+        )
+      );
+
+      if (flagNotificationsEnabled) {
+        addNotification(
+          `${flag.key} has been deleted.`,
+          "error"
+        );
+      }
+
+    } catch (error) {
+
+      console.error("Failed to delete flag:", error);
+
+      setError(
+        error.response?.data?.detail ||
+        "Failed to delete feature flag."
+      );
+
+    }
+
+  };
+
+
+  // =====================================================
   // LOADING
   // =====================================================
 
@@ -715,6 +758,16 @@ function Flags() {
                           }
                         >
                           Edit
+                        </button>
+
+                        <button
+                          type="button"
+                          className="delete-action"
+                          onClick={() =>
+                            handleDeleteFlag(flag)
+                          }
+                        >
+                          Delete
                         </button>
 
                       </div>

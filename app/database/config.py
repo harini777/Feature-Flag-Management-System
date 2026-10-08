@@ -1,3 +1,9 @@
-DATABASE_URL = (
-    "postgresql://postgres:harini_07@localhost:5432/feature_flag_db"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "postgresql://postgres:postgres@localhost:5432/feature_flag_db"
 )

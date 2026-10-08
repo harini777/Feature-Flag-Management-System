@@ -5,6 +5,7 @@ const NotificationContext = createContext(null);
 
 export function NotificationProvider({ children }) {
   const [notifications, setNotifications] = useState([]);
+  const [notificationHistory, setNotificationHistory] = useState([]);
 
   const addNotification = (notification, type = "info") => {
     const id = Date.now();
@@ -19,22 +20,23 @@ export function NotificationProvider({ children }) {
         title: notification.title || "Notification",
         message: notification.message || "",
         type: notification.type || "info",
+        timestamp: new Date(),
       };
     } else {
       notificationData = {
         title: "Notification",
         message: notification,
         type,
+        timestamp: new Date(),
       };
     }
 
-    setNotifications((previous) => [
-      ...previous,
-      {
-        id,
-        ...notificationData,
-      },
-    ]);
+    const newNotification = { id, ...notificationData };
+
+    setNotifications((previous) => [...previous, newNotification]);
+    
+    // Add to history (newest first)
+    setNotificationHistory((previous) => [newNotification, ...previous]);
 
     // Remove automatically after 4 seconds
     setTimeout(() => {
@@ -54,12 +56,18 @@ export function NotificationProvider({ children }) {
     );
   };
 
+  const clearHistory = () => {
+    setNotificationHistory([]);
+  };
+
   return (
     <NotificationContext.Provider
       value={{
         notifications,
+        notificationHistory,
         addNotification,
         removeNotification,
+        clearHistory,
       }}
     >
       {children}

@@ -174,12 +174,8 @@ function EditTargetingRuleModal({
                 Equals (=)
               </option>
 
-              <option value="equals">
-                Equals
-              </option>
-
-              <option value="not_equals">
-                Not Equals
+              <option value="!=">
+                Not Equals (!=)
               </option>
 
               <option value="contains">
@@ -192,6 +188,10 @@ function EditTargetingRuleModal({
 
               <option value="ends_with">
                 Ends With
+              </option>
+
+              <option value="in">
+                In (comma-separated list)
               </option>
 
             </select>

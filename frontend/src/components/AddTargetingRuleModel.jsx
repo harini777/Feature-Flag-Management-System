@@ -11,7 +11,7 @@ function AddTargetingRuleModel({
     flag_id: "",
     ruleType: "attribute",
     attribute: "",
-    operator: "equals",
+    operator: "=",
     value: "",
     rolloutPercentage: 50,
   });
@@ -472,12 +472,12 @@ function AddTargetingRuleModel({
                   onChange={handleChange}
                 >
 
-                  <option value="equals">
-                    Equals
+                  <option value="=">
+                    Equals (=)
                   </option>
 
-                  <option value="not_equals">
-                    Not Equals
+                  <option value="!=">
+                    Not Equals (!=)
                   </option>
 
                   <option value="contains">
@@ -491,6 +491,11 @@ function AddTargetingRuleModel({
                   <option value="ends_with">
                     Ends With
                   </option>
+
+                  <option value="in">
+                    In (comma-separated list)
+                  </option>
+
 
                 </select>
 

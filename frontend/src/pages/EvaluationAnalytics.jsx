@@ -60,15 +60,20 @@ function EvaluationAnalytics() {
   }, []);
 
   // =====================================================
-  // REMOVE DUPLICATE FLAGS
+  // REMOVE DUPLICATE FLAGS (by key)
   // =====================================================
 
+  // Build unique flag keys from analytics data so the filter dropdown
+  // always shows flags that actually have evaluation records, even if
+  // the flags list from /flags doesn't align exactly.
+  const uniqueAnalyticsKeys = [
+    ...new Set(analytics.map((item) => item.flag_key).filter(Boolean)),
+  ];
+
+  // Also include flags from the /flags endpoint for a richer dropdown
   const uniqueFlags = flags.filter(
     (flag, index, self) =>
-      index ===
-      self.findIndex(
-        (item) => item.key === flag.key
-      )
+      index === self.findIndex((item) => item.key === flag.key)
   );
 
   // =====================================================
@@ -79,9 +84,7 @@ function EvaluationAnalytics() {
     selectedFlag === "all"
       ? analytics
       : analytics.filter(
-          (item) =>
-            String(item.flag_id) ===
-            String(selectedFlag)
+          (item) => item.flag_key === selectedFlag
         );
 
   // =====================================================
@@ -101,9 +104,7 @@ function EvaluationAnalytics() {
 
   const flagsWithEvaluations =
     new Set(
-      filteredAnalytics.map(
-        (item) => item.flag_id
-      )
+      filteredAnalytics.map((item) => item.flag_key)
     ).size;
 
   // =====================================================
@@ -330,16 +331,22 @@ function EvaluationAnalytics() {
                 All Flags
               </option>
 
-              {uniqueFlags.map((flag) => (
-
-                <option
-                  key={flag.flag_id}
-                  value={flag.flag_id}
-                >
-                  {flag.key}
+              {/* Flags from analytics records */}
+              {uniqueAnalyticsKeys.map((flagKey) => (
+                <option key={flagKey} value={flagKey}>
+                  {flagKey}
                 </option>
-
               ))}
+
+              {/* Flags from /flags that may not yet have analytics */}
+              {uniqueFlags
+                .filter((flag) => !uniqueAnalyticsKeys.includes(flag.key))
+                .map((flag) => (
+                  <option key={flag.flag_id} value={flag.key}>
+                    {flag.key}
+                  </option>
+                ))}
+
 
             </select>
 

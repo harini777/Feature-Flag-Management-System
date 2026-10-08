@@ -13,6 +13,7 @@ import {
 
 import api from "../api";
 import AddFlagModel from "../components/AddFlagModel";
+import { useNotification } from "../context/NotificationContext";
 import "./dashboard.css";
 
 function Dashboard() {
@@ -21,6 +22,9 @@ function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [showAddFlagModel, setShowAddFlagModel] = useState(false);
+  const [isNotificationDropdownOpen, setIsNotificationDropdownOpen] = useState(false);
+  
+  const { notificationHistory, clearHistory } = useNotification();
 
   // =====================================================
   // GET LOGGED-IN USER
@@ -340,9 +344,47 @@ function Dashboard() {
 
           <div className="header-right">
 
-            <button className="notification-button">
-              <i className="fa-solid fa-bell"></i>
-            </button>
+            <div className="notification-container-relative">
+              <button 
+                className="notification-button"
+                onClick={() => setIsNotificationDropdownOpen(!isNotificationDropdownOpen)}
+              >
+                <i className="fa-solid fa-bell"></i>
+                {notificationHistory?.length > 0 && (
+                  <span className="notification-badge">{notificationHistory.length}</span>
+                )}
+              </button>
+
+              {isNotificationDropdownOpen && (
+                <div className="notification-dropdown">
+                  <div className="notification-dropdown-header">
+                    <h4>Notifications</h4>
+                    {notificationHistory?.length > 0 && (
+                      <button className="clear-history-button" onClick={clearHistory}>
+                        Clear All
+                      </button>
+                    )}
+                  </div>
+                  <div className="notification-dropdown-body">
+                    {notificationHistory?.length > 0 ? (
+                      notificationHistory.map((notif) => (
+                        <div key={notif.id} className={`notification-dropdown-item ${notif.type}`}>
+                          <div className="notif-title">{notif.title}</div>
+                          <div className="notif-message">{notif.message}</div>
+                          <div className="notif-time">
+                            {new Date(notif.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                          </div>
+                        </div>
+                      ))
+                    ) : (
+                      <div className="notification-dropdown-empty">
+                        No new notifications
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* Profile */}
 
